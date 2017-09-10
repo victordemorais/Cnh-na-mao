@@ -1,0 +1,62 @@
+<ion-header>
+  <ion-navbar color="primary" text-uppercase>
+    <button ion-button icon-only menuToggle id="menu">
+      <div id="nav">
+    <span></span>
+    <span></span>
+    <span></span>
+  </div>
+    </button>
+    <ion-title>CNH na mão</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding id="conteudo">
+  <ion-list>
+    <ion-item (click)="simularprova('Legislacao');">
+      <ion-avatar item-start>
+        <img src="assets/imgs/placas/legislacao.png">
+      </ion-avatar>
+      Legislação
+
+    </ion-item>
+
+    <ion-item (click)="simularprova('DirecaoDefensiva');">
+      <ion-avatar item-start>
+        <img src="assets/imgs/placas/direcaodefensiva.png">
+      </ion-avatar>
+      Direção Defensiva
+    </ion-item>
+
+    <ion-item (click)="simularprova('MeioAmbiente');">
+      <ion-avatar item-start>
+        <img src="assets/imgs/placas/meioambiente.png">
+      </ion-avatar>
+      Meio Ambiente
+    </ion-item>
+
+    <ion-item (click)="simularprova('Mecanica');">
+      <ion-avatar item-start>
+        <img src="assets/imgs/placas/mecanica.png">
+      </ion-avatar>
+      Mecânica
+    </ion-item>
+
+    <ion-item (click)="simularprova('PrimeirosSocorros');">
+      <ion-avatar item-start>
+        <img src="assets/imgs/placas/primeirossocorros.png">
+      </ion-avatar>
+      Primeiros Sococorros
+    </ion-item>
+
+    <ion-item (click)="simularprova('Aleatorio');">
+      <ion-avatar item-start>
+        <img src="assets/imgs/placas/aleatorio.png">
+      </ion-avatar>
+      Aleatório
+    </ion-item>
+
+  </ion-list>
+</ion-content>

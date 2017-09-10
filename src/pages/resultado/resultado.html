@@ -1,0 +1,31 @@
+<ion-header>
+
+  <ion-navbar color="primary" text-uppercase>
+    <button ion-button icon-only menuToggle id="menu">
+          <div id="nav">
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
+        </button>
+    <ion-title>CNH na mão</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+<ion-content id="conteudo">
+  <ion-list *ngFor="let pergunta of perguntas; let i = index" [ngClass]="{'naorespondeu':!pergunta.hasOwnProperty('resposta')}">
+    <ion-item text-wrap class="itemnaorespondido">
+      {{i+1}} - {{pergunta.pergunta}} <span *ngIf="!pergunta.hasOwnProperty('resposta')"> ( Não Respondida ) </span>
+    </ion-item>
+    <ion-item *ngFor="let resposta of respostas[i] ">
+        <span [ngClass]="{'green2':resposta.correta == 1 &&  resposta.resposta == pergunta.resposta,
+              'green':resposta.correta == 1 && resposta.resposta != pergunta.resposta,
+              'red':resposta.correta == 0 && resposta.resposta == pergunta.resposta}
+              ">
+              {{resposta.resposta}}</span>
+            
+      </ion-item>
+      <span></span>
+  </ion-list>
+</ion-content>

@@ -1,0 +1,41 @@
+<ion-header>
+    <ion-navbar color="primary" text-uppercase>
+      <button ion-button icon-only menuToggle id="menu">
+        <div id="nav">
+      <span></span>
+      <span></span>
+      <span></span>
+    </div>
+      </button>
+      <ion-title>CNH na mão</ion-title>
+    </ion-navbar>
+  </ion-header>
+  <ion-content id="conteudo">
+    <ion-slides>
+      
+      <ion-slide *ngFor="let question of dataSet; let i = index">
+        <div id="perguntas">
+          <ion-list radio-group [(ngModel)]="question.resposta">
+            <h1>{{i+1}} - {{ question.pergunta }}</h1>
+            <ion-item *ngFor="let resposta of respostas[i]">
+              <ion-label>{{ resposta.resposta }}</ion-label>
+              <ion-radio [value]="resposta.resposta"></ion-radio>
+            </ion-item>
+          </ion-list>
+        </div>
+
+        <ion-row margin-top>
+          <ion-col>
+            <button (click)="showPrevious()" ion-button text-only [disabled]="i === 0">Voltar</button>
+          </ion-col>
+          <ion-col>
+            <button [disabled]="!question.pergunta" *ngIf="i < dataSet.length - 1" (click)="showNext(question)" ion-button text-only>Próximo</button>
+            <button [disabled]="!question.pergunta" *ngIf="i === dataSet.length - 1" (click)="resultado(question)" ion-button text-only>Enviar</button>
+          </ion-col>
+        </ion-row>
+  
+      </ion-slide>
+    </ion-slides>
+  
+  </ion-content>
+  

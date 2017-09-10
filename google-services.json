@@ -1,0 +1,42 @@
+{
+  "project_info": {
+    "project_number": "665303991144",
+    "firebase_url": "https://cnh-na-mao.firebaseio.com",
+    "project_id": "cnh-na-mao",
+    "storage_bucket": "cnh-na-mao.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:665303991144:android:ac2c148b7f48b2df",
+        "android_client_info": {
+          "package_name": "com.cnh.namao"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "665303991144-2pbqk30gfu66ggv2ngj8hit6tuga4si4.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCN8h9e7Js2pqXNqp3GGdwP7pAX0HB7QgE"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 1,
+          "other_platform_oauth_client": []
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

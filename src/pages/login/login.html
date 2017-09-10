@@ -1,0 +1,21 @@
+<ion-content id="conteudo">
+    <div class="logo">
+        <h1>CNH na Mão</h1>
+  </div>
+  <ion-list padding>
+    <ion-item>
+      <ion-label color="primary"><ion-icon name="person"></ion-icon></ion-label>
+      <ion-input name="username" placeholder="Login" type="text" [(ngModel)]="userData.usuario"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label color="primary"><ion-icon name="lock"></ion-icon></ion-label>
+      <ion-input name="senha" placeholder="Senha" type="password" [(ngModel)]="userData.senha"></ion-input>
+    </ion-item>
+     <button ion-button full color="primary" (click)="Logar()">
+        Logar
+    </button>
+    <p text-center>Clique <a href="#" (click)="Cadastrar()">aqui</a> para se cadastrar!</p>
+  </ion-list>
+    <div class="mostrandocnh" >  </div>
+  </ion-content>
+  

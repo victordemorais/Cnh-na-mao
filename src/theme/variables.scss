@@ -1,0 +1,145 @@
+// Ionic Variables and Theming. For more info, please see:
+// http://ionicframework.com/docs/theming/
+
+// Font path is used to include ionicons,
+// roboto, and noto sans fonts
+$font-path: "../assets/fonts";
+@font-face {
+font-family: MyFont;
+src: url("../assets/fonts/Montserrat-Regular.otf");
+}
+
+body, span, button, h1, h2, h3, h4, h5, h6, p, ion-item, ion-title {
+font-family: 'MyFont' !important;
+}
+
+// The app direction is used to include
+// rtl styles in your app. For more info, please see:
+// http://ionicframework.com/docs/theming/rtl-support/
+$app-direction: ltr;
+
+
+@import "ionic.globals";
+
+
+// Shared Variables
+// --------------------------------------------------
+// To customize the look and feel of this app, you can override
+// the Sass variables found in Ionic's source scss files.
+// To view all the possible Ionic variables, see:
+// http://ionicframework.com/docs/theming/overriding-ionic-variables/
+
+
+
+
+// Named Color Variables
+// --------------------------------------------------
+// Named colors makes it easy to reuse colors on various components.
+// It's highly recommended to change the default colors
+// to match your app's branding. Ionic uses a Sass map of
+// colors so you can add, rename and remove colors as needed.
+// The "primary" color is the only required color in the map.
+
+$colors: (
+  primary:    #2476ff,
+  secondary:  #32db64,
+  danger:     #f53d3d,
+  light:      #f4f4f4,
+  dark:       #222
+);
+
+
+// App iOS Variables
+// --------------------------------------------------
+// iOS only Sass variables can go here
+
+
+
+
+// App Material Design Variables
+// --------------------------------------------------
+// Material Design only Sass variables can go here
+
+
+
+
+// App Windows Variables
+// --------------------------------------------------
+// Windows only Sass variables can go here
+
+
+
+
+// App Theme
+// --------------------------------------------------
+// Ionic apps can have different themes applied, which can
+// then be future customized. This import comes last
+// so that the above variables are used and Ionic's
+// default are overridden.
+
+@import "ionic.theme.default";
+
+
+// Ionicons
+// --------------------------------------------------
+// The premium icon font for Ionic. For more info, please see:
+// http://ionicframework.com/docs/ionicons/
+
+@import "ionic.ionicons";
+
+
+
+
+//Configurações Globais
+/* Menu Icon */
+#nav {
+  margin-top: -5px;
+  position: relative;
+}
+
+#nav span {
+  position: relative;
+  display: flex;
+  height: 2px;
+  width: 30px;
+  background-color: #fff;
+  opacity: 1;
+  left: 0;
+}
+
+#nav span:nth-child(1) {
+  top: 0;
+}
+
+#nav span:nth-child(2) {
+  top: 4px;
+  width: 23px;
+
+}
+
+#nav span:nth-child(3) {
+  top: 8px;
+}
+
+
+//BACKGROUND
+@media screen and (max-width: 480px) {
+  #conteudo {
+    background: url('../assets/imgs/back.png') bottom center no-repeat,url('../assets/imgs/back-opa.png');
+    background-size: contain;
+    padding-bottom: 0 !important;
+  }
+}
+@media screen and (min-width: 480px) and (min-height: 580px) {
+  #conteudo {
+    background:url('../assets/imgs/back.png') bottom center no-repeat, url('../assets/imgs/back-opa.png');
+    background-size: cover;
+    padding-bottom: 0 !important;
+  }
+}
+@media screen and (min-width: 480px) and (max-height: 580px) {
+ #conteudo {
+    background: #f1f1f1 url('../assets/imgs/back-opa.png');
+    padding-bottom: 0 !important;
+  }
+}

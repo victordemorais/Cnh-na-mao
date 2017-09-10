@@ -1,0 +1,37 @@
+page-simulado {
+    .swiper-slide {
+      align-items: initial;
+    }
+  
+    .scroll-content {
+      background: #f1f1f1 url('../assets/imgs/back-others.png') bottom center no-repeat fixed;
+      background-size: contain;
+      background-attachment: fixed;
+      padding-bottom: 0 !important;
+    }
+  
+    #perguntas {
+      text-align: left;
+  
+      h1 {
+        font-size: 0.8em;
+        background: #fff;
+        margin: 0;
+        padding: 14px;
+        border-bottom: 3px solid #488aff;
+      }
+  
+      .item {
+        contain: content;
+        font-size: 0.8em !important;
+      }
+    }
+  
+    #menuabsoluto {
+      position: absolute;
+      z-index: 99;
+      right: 2px;
+    }
+  
+  }
+  
