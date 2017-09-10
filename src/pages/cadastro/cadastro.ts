@@ -22,10 +22,10 @@ export class CadastroPage {
     public authservice: AuthServiceProvider) {
       this.cadastro = this.formBuilder.group({
         nome:['', Validators.compose([Validators.maxLength(30), Validators.pattern('[a-zA-Z ]*'), Validators.required])],
-        cpf:['', Validators.required],
+        cpf:['', Validators.compose([Validators.minLength(14), Validators.minLength(14), Validators.required])],
         genero:['', Validators.required],
         usuario:['', Validators.required],
-        email:['', Validators.required],
+        email:['',[Validators.required,Validators.pattern("[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*@(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?")]],
         senha:['', Validators.required]
   });
       

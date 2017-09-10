@@ -6,6 +6,7 @@ import { SplashScreen } from '@ionic-native/splash-screen';
 import { StatusBar } from '@ionic-native/status-bar';
 import { Push } from '@ionic-native/push';
 import { IonicStorageModule } from '@ionic/storage';
+import { BrMaskerModule } from 'brmasker-ionic-3';
 /* Páginas */
 import { MyApp } from './app.component';
 import { HomePage } from '../pages/home/home';
@@ -32,7 +33,8 @@ import { AuthServiceProvider } from './../providers/auth-service/auth-service';
     BrowserModule,
     IonicModule.forRoot(MyApp),
     IonicStorageModule.forRoot(),
-    HttpModule
+    HttpModule,
+    BrMaskerModule
   ],
   bootstrap: [IonicApp],
   entryComponents: [

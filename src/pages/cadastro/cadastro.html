@@ -9,16 +9,21 @@
         <ion-icon name="contact"></ion-icon>
       </ion-label>
       <ion-input name="username" placeholder="Nome" type="text" formControlName="nome"></ion-input>
-    </ion-item>
+    </ion-item >
     <ion-item *ngIf="!cadastro.controls.nome.valid  && (cadastro.controls.usuario.dirty || formEnviado)">
         <p class="invalid-message">Nome Invalido!</p>
     </ion-item>
-    <ion-item>
+
+    <ion-item [class.invalid]="!cadastro.controls.usuario.valid  && (cadastro.controls.email.dirty || formEnviado)">
       <ion-label color="primary">
         <ion-icon name="person"></ion-icon>
       </ion-label>
       <ion-input name="username" placeholder="Login" type="text" formControlName="usuario"></ion-input>
     </ion-item>
+    <ion-item *ngIf="!cadastro.controls.usuario.valid  && (cadastro.controls.email.dirty || formEnviado)">
+        <p class="invalid-message">Nome de usuario Invalido!</p>
+    </ion-item>
+
     <ion-item>
       <ion-label color="primary">
         <ion-icon name="contact"></ion-icon>
@@ -35,7 +40,7 @@
       <ion-label color="primary">
         <ion-icon name="card"></ion-icon>
       </ion-label>
-      <ion-input type="text" name="cpf" placeholder="CPF" formControlName="cpf"></ion-input>
+      <ion-input ng-pattern="/^\d{3}\.\d{3}\.\d{3}\-\d{2}$/" type="tel" name="cpf" placeholder="CPF" formControlName="cpf" [brmasker]="{mask:'000.000.000-00', len:14}"></ion-input>
     </ion-item>
     <ion-item>
       <ion-label>Gênero</ion-label>
