@@ -120,26 +120,6 @@ $colors: (
 #nav span:nth-child(3) {
   top: 8px;
 }
-
-
-//BACKGROUND
-@media screen and (max-width: 480px) {
-  #conteudo {
-    background: url('../assets/imgs/back.png') bottom center no-repeat,url('../assets/imgs/back-opa.png');
-    background-size: contain;
-    padding-bottom: 0 !important;
-  }
-}
-@media screen and (min-width: 480px) and (min-height: 580px) {
-  #conteudo {
-    background:url('../assets/imgs/back.png') bottom center no-repeat, url('../assets/imgs/back-opa.png');
-    background-size: cover;
-    padding-bottom: 0 !important;
-  }
-}
-@media screen and (min-width: 480px) and (max-height: 580px) {
- #conteudo {
-    background: #f1f1f1 url('../assets/imgs/back-opa.png');
-    padding-bottom: 0 !important;
-  }
+#conteudo{
+  background-color:#f1f1f1;
 }

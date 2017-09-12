@@ -1,7 +1,7 @@
+import { LoadingProvider } from './../../providers/loading/loading';
 import { Component, ViewChild } from '@angular/core';
 import { IonicPage, NavController, Slides, NavParams } from 'ionic-angular';
 import { AuthServiceProvider } from '../../providers/auth-service/auth-service';
-import { ResultadoPage } from '../resultado/resultado';
 import { Http } from '@angular/http';
 @IonicPage()
 @Component({
@@ -19,7 +19,9 @@ export class SimuladoPage {
   public simulados: any;
   userPostData = { "user_id": "", "token": "" };
   respostasusuario = [];
-  constructor(public navCtrl: NavController, public authservice: AuthServiceProvider, public http: Http, public navParams:NavParams) {
+  constructor(public navCtrl: NavController, public authservice: AuthServiceProvider, public http: Http, public navParams:NavParams, public loading:LoadingProvider) {
+
+    
     const data = JSON.parse(localStorage.getItem('token'));
     this.detalheusuarios = data.token;
     this.userPostData.user_id = this.detalheusuarios.user_id;
@@ -27,12 +29,15 @@ export class SimuladoPage {
     this.tipo = this.navParams.get("tipo");
     this.getSimulado();
   }
-
-
+ 
   getSimulado() {
+   
+    
+    this.loading.carregando();
     this.authservice.postData(this.userPostData, "simulado/"+this.tipo).then((result) => {
       this.responseData = result;
       if (this.responseData.simulado) {
+        this.loading.carregado();
         this.dataSet = this.responseData.simulado;
         this.respostas = this.responseData.respostas;
         this.simulados = this.responseData.simulados;
@@ -53,7 +58,7 @@ export class SimuladoPage {
     // for(var i = 0;i<this.respostasusuario.length;i++) {
     //  console.log(this.respostasusuario[i]);
     // }
-    this.navCtrl.push(ResultadoPage, { "respostasusuario": this.respostasusuario, "respostas": this.respostas, "perguntas": this.dataSet , "simulados": this.simulados});
+    this.navCtrl.push('ResultadoPage', { "respostasusuario": this.respostasusuario, "respostas": this.respostas, "perguntas": this.dataSet , "simulados": this.simulados});
   }
 
 

@@ -1,7 +1,6 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
 import { Validators, FormBuilder } from '@angular/forms';
-import { HomePage } from '../home/home';
 import { AuthServiceProvider } from '../../providers/auth-service/auth-service';
 import { ToastController } from 'ionic-angular';
 @IonicPage()
@@ -45,7 +44,7 @@ export class CadastroPage {
         console.log(this.responseData);
         if (this.responseData.token) {
           localStorage.setItem('token', JSON.stringify(this.responseData));
-          this.navCtrl.setRoot(HomePage, {}, { animate: true, direction: 'forward' });
+          this.navCtrl.setRoot('HomePage', {}, { animate: true, direction: 'forward' });
         } else {
           this.presentToast("Erro ao cadastrar usuário favor tente novamente.");
         }

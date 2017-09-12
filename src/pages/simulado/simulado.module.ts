@@ -3,6 +3,10 @@ import { IonicPageModule } from 'ionic-angular';
 import { SimuladoPage } from './simulado';
 
 @NgModule({
+  
+  declarations: [
+    SimuladoPage,
+  ],
   imports: [
     IonicPageModule.forChild(SimuladoPage),
   ],

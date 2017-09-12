@@ -1,4 +1,3 @@
-import { ListarsimuladosPage } from '../pages/listarsimulados/listarsimulados';
 import { Component, ViewChild } from '@angular/core';
 import { Platform, Nav } from 'ionic-angular';
 import { StatusBar } from '@ionic-native/status-bar';
@@ -7,14 +6,12 @@ import { Push, PushObject, PushOptions } from '@ionic-native/push';
 import { Storage } from '@ionic/storage';
 
 
-import { HomePage } from '../pages/home/home';
-import { LoginPage } from '../pages/login/login';
 @Component({
   templateUrl: 'app.html'
 })
 export class MyApp {
   @ViewChild('NAV') nav:Nav;
-  public rootPage:any ;
+  public rootPage:any;
   public pages: Array<{titulo:string, component:any, icon:string}>;
 
   constructor(
@@ -27,8 +24,8 @@ export class MyApp {
  
       
     this.pages = [
-      { titulo: 'Inicio', component: HomePage, icon: 'home' },
-      { titulo: 'Listar Simulados', component: ListarsimuladosPage, icon: 'list' },
+      { titulo: 'Inicio', component: "HomePage", icon: 'home' },
+      { titulo: 'Listar Simulados', component: "ListarsimuladosPage", icon: 'list' },
       { titulo: 'Sair', component: 'exit', icon: 'exit' }
     ];
     platform.ready().then(() => {
@@ -36,9 +33,9 @@ export class MyApp {
       splashScreen.hide();
       if(localStorage.getItem("token"))
       {
-       this.rootPage = HomePage;
+       this.rootPage = "HomePage";
       }else{
-        this.rootPage = LoginPage;
+        this.rootPage = "LoginPage";
       }
       
       this.pushsetup();
@@ -85,7 +82,7 @@ export class MyApp {
   goToPage(page) {
     if (page == "exit") {
       localStorage.clear();
-      this.nav.setRoot(LoginPage);
+      this.nav.setRoot('LoginPage');
       this.nav.popToRoot();
     } else {
       this.nav.setRoot(page);

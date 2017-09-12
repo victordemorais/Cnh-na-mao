@@ -1,4 +1,3 @@
-import { SimuladoPage } from './../simulado/simulado';
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
 
@@ -25,7 +24,7 @@ export class ListarsimuladosPage {
   }
   simularprova(prova){
     
-    this.navCtrl.push(SimuladoPage,{"tipo":prova});
+    this.navCtrl.push('SimuladoPage',{"tipo":prova});
   }
 
 }

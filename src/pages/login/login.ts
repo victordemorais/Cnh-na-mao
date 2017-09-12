@@ -1,11 +1,9 @@
 import { Storage } from '@ionic/storage';
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
-import { CadastroPage } from '../cadastro/cadastro';
 
 import{ AuthServiceProvider } from '../../providers/auth-service/auth-service';
 import { ToastController } from 'ionic-angular';
-import { HomePage } from '../home/home';
 /**
  * Generated class for the LoginPage page.
  *
@@ -37,7 +35,7 @@ export class LoginPage {
  
   }
   Cadastrar(){
-    this.navCtrl.push(CadastroPage);
+    this.navCtrl.push('CadastroPage');
   }
   Logar(){
     if(this.userData.usuario && this.userData.senha){
@@ -48,7 +46,7 @@ export class LoginPage {
       console.log(this.responseData);
       if(this.responseData.token){
         localStorage.setItem('token',JSON.stringify(this.responseData))
-      this.navCtrl.setRoot(HomePage, {}, { animate: true, direction: 'forward' });
+      this.navCtrl.setRoot('HomePage', {}, { animate: true, direction: 'forward' });
       }else{
         this.presentToast("Senha ou usuário invalído!");
       }

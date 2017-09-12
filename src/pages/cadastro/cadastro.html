@@ -3,68 +3,80 @@
     <h1>CNH na Mão</h1>
   </div>
   <form [formGroup]="cadastro" (ngSubmit)="Cadastrar();">
-  <ion-list padding>
-    <ion-item [class.invalid]="!cadastro.controls.nome.valid  && (cadastro.controls.usuario.dirty || formEnviado)">
-      <ion-label color="primary">
-        <ion-icon name="contact"></ion-icon>
-      </ion-label>
-      <ion-input name="username" placeholder="Nome" type="text" formControlName="nome"></ion-input>
-    </ion-item >
-    <ion-item *ngIf="!cadastro.controls.nome.valid  && (cadastro.controls.usuario.dirty || formEnviado)">
+    <ion-list padding>
+      <ion-item [class.invalid]="!cadastro.controls.nome.valid  && (cadastro.controls.usuario.dirty || formEnviado)">
+        <ion-label color="primary">
+          <ion-icon name="contact"></ion-icon>
+        </ion-label>
+        <ion-input name="username" placeholder="Nome" type="text" formControlName="nome"></ion-input>
+      </ion-item>
+      <ion-item *ngIf="!cadastro.controls.nome.valid  && (cadastro.controls.usuario.dirty || formEnviado)">
         <p class="invalid-message">Nome Invalido!</p>
-    </ion-item>
+      </ion-item>
+      <ion-item [class.invalid]="!cadastro.controls.usuario.valid  && (cadastro.controls.email.dirty || formEnviado)">
+        <ion-label color="primary">
+          <ion-icon name="person"></ion-icon>
+        </ion-label>
 
-    <ion-item [class.invalid]="!cadastro.controls.usuario.valid  && (cadastro.controls.email.dirty || formEnviado)">
-      <ion-label color="primary">
-        <ion-icon name="person"></ion-icon>
-      </ion-label>
-      <ion-input name="username" placeholder="Login" type="text" formControlName="usuario"></ion-input>
-    </ion-item>
-    <ion-item *ngIf="!cadastro.controls.usuario.valid  && (cadastro.controls.email.dirty || formEnviado)">
+        <ion-input name="username" placeholder="Login" type="text" formControlName="usuario"></ion-input>
+      </ion-item>
+      <ion-item *ngIf="!cadastro.controls.usuario.valid  && (cadastro.controls.email.dirty || formEnviado)">
         <p class="invalid-message">Nome de usuario Invalido!</p>
-    </ion-item>
+      </ion-item>
 
-    <ion-item>
-      <ion-label color="primary">
-        <ion-icon name="contact"></ion-icon>
-      </ion-label>
-      <ion-input name="username" placeholder="Email" type="text" formControlName="email"></ion-input>
-    </ion-item>
-    <ion-item>
-      <ion-label color="primary">
-        <ion-icon name="lock"></ion-icon>
-      </ion-label>
-      <ion-input name="senha" placeholder="Senha" type="password" formControlName="senha"></ion-input>
-    </ion-item>
-    <ion-item>
-      <ion-label color="primary">
-        <ion-icon name="card"></ion-icon>
-      </ion-label>
-      <ion-input ng-pattern="/^\d{3}\.\d{3}\.\d{3}\-\d{2}$/" type="tel" name="cpf" placeholder="CPF" formControlName="cpf" [brmasker]="{mask:'000.000.000-00', len:14}"></ion-input>
-    </ion-item>
-    <ion-item>
-      <ion-label>Gênero</ion-label>
-      <ion-select interface="popover" formControlName="genero">
-        <ion-option value="f">Feminino</ion-option>
-        <ion-option value="m">Masculino</ion-option>
-      </ion-select>
-    </ion-item>
-    <ion-grid>
-      <ion-row>
-        <ion-col>
-          <button ion-button full color="primary" type="button" (click)="Voltar();">
+      <ion-item>
+        <ion-label color="primary">
+          <ion-icon name="contact"></ion-icon>
+        </ion-label>
+        <ion-input name="username" placeholder="Email" type="text" formControlName="email"></ion-input>
+      </ion-item>
+      <ion-item *ngIf="!cadastro.controls.email.valid  && (cadastro.controls.senha.dirty || formEnviado)">
+        <p class="invalid-message">Email Invalido!</p>
+      </ion-item>
+
+      <ion-item>
+        <ion-label color="primary">
+          <ion-icon name="lock"></ion-icon>
+        </ion-label>
+        <ion-input name="senha" placeholder="Senha" type="password" formControlName="senha"></ion-input>
+      </ion-item>
+      <ion-item *ngIf="!cadastro.controls.senha.valid  && (cadastro.controls.cpf.dirty || formEnviado)">
+        <p class="invalid-message">Senha Invalida!</p>
+      </ion-item>
+
+      <ion-item>
+        <ion-label color="primary">
+          <ion-icon name="card"></ion-icon>
+        </ion-label>
+        <ion-input type="text" name="cpf" placeholder="CPF" formControlName="cpf" ></ion-input>
+      </ion-item>
+      <ion-item *ngIf="!cadastro.controls.cpf.valid  && (cadastro.controls.genero.dirty || formEnviado)">
+        <p class="invalid-message">Cpf Invalido!</p>
+      </ion-item>
+
+      <ion-item>
+        <ion-label>Gênero</ion-label>
+        <ion-select interface="popover" formControlName="genero">
+          <ion-option value="f">Feminino</ion-option>
+          <ion-option value="m">Masculino</ion-option>
+        </ion-select>
+      </ion-item>
+      <ion-grid>
+        <ion-row>
+          <ion-col>
+            <button ion-button full color="primary" type="button" (click)="Voltar();">
           <ion-icon ios="ios-arrow-round-back" md="md-arrow-round-back"></ion-icon>
        </button>
-        </ion-col>
-        <ion-col>
-          <button ion-button full color="primary">
+          </ion-col>
+          <ion-col>
+            <button ion-button full color="primary">
            Cadastrar
        </button>
-        </ion-col>
-      </ion-row>
-    </ion-grid>
+          </ion-col>
+        </ion-row>
+      </ion-grid>
 
-  </ion-list>
+    </ion-list>
   </form>
   <div class="mostrandocnh"> </div>
 </ion-content>

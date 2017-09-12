@@ -6,45 +6,27 @@ import { SplashScreen } from '@ionic-native/splash-screen';
 import { StatusBar } from '@ionic-native/status-bar';
 import { Push } from '@ionic-native/push';
 import { IonicStorageModule } from '@ionic/storage';
-import { BrMaskerModule } from 'brmasker-ionic-3';
+
+
 /* Páginas */
 import { MyApp } from './app.component';
-import { HomePage } from '../pages/home/home';
-import { SimuladoPage } from '../pages/simulado/simulado';
-import { LoginPage } from '../pages/login/login';
-import { CadastroPage } from '../pages/cadastro/cadastro';
-import { ResultadoPage } from '../pages/resultado/resultado';
-import { ListarsimuladosPage } from '../pages/listarsimulados/listarsimulados';
 
 /* Providers  */
 import { AuthServiceProvider } from './../providers/auth-service/auth-service';
+import { LoadingProvider } from '../providers/loading/loading';
 @NgModule({
   declarations: [
-    MyApp,
-    HomePage,
-    SimuladoPage,
-    LoginPage,
-    CadastroPage,
-    ResultadoPage,
-    ListarsimuladosPage
-    
+    MyApp
   ],
   imports: [
     BrowserModule,
     IonicModule.forRoot(MyApp),
     IonicStorageModule.forRoot(),
-    HttpModule,
-    BrMaskerModule
+    HttpModule
   ],
   bootstrap: [IonicApp],
   entryComponents: [
-    MyApp,
-    HomePage,
-    SimuladoPage,
-    LoginPage,
-    CadastroPage,
-    ResultadoPage,
-    ListarsimuladosPage
+    MyApp
     
   ],
   providers: [
@@ -52,7 +34,8 @@ import { AuthServiceProvider } from './../providers/auth-service/auth-service';
     SplashScreen,
     {provide: ErrorHandler, useClass: IonicErrorHandler},
     AuthServiceProvider,
-    Push
+    Push,
+    LoadingProvider
   ]
 })
 export class AppModule {}
