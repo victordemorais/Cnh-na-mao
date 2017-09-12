@@ -1,3 +1,4 @@
+import { ComponentsModule } from './../../components/components.module';
 import { NgModule } from '@angular/core';
 import { IonicPageModule } from 'ionic-angular';
 import { SimuladoPage } from './simulado';
@@ -5,10 +6,10 @@ import { SimuladoPage } from './simulado';
 @NgModule({
   
   declarations: [
-    SimuladoPage,
+    SimuladoPage
   ],
   imports: [
-    IonicPageModule.forChild(SimuladoPage),
+    IonicPageModule.forChild(SimuladoPage),ComponentsModule
   ],
 })
 export class SimuladoPageModule {}

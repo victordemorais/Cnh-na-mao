@@ -85,7 +85,7 @@ export class MyApp {
       this.nav.setRoot('LoginPage');
       this.nav.popToRoot();
     } else {
-      this.nav.setRoot(page);
+      this.nav.setRoot(page.toString());
     }
   }
 }

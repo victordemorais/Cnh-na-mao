@@ -1,3 +1,9 @@
+<ion-header>
+  <ion-navbar color="primary" text-uppercase>
+    <navbar></navbar>
+  </ion-navbar>
+</ion-header>
+
 <ion-content id="conteudo">
   <ion-list *ngFor="let pergunta of perguntas; let i = index" [ngClass]="{'naorespondeu':!pergunta.hasOwnProperty('resposta')}">
     <ion-item text-wrap class="itemnaorespondido">

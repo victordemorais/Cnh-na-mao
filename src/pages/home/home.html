@@ -1,20 +1,24 @@
-
-  <ion-content padding id="conteudo"> 
-      <h1>Bem Vindo {{detalheusuarios.nome}}</h1>
-      <div id="conteudoicon">
-        <span class="animated bounceInDown"></span>
-        <span class="animated bounceInLeft" (click)="goToPage('ListarsimuladosPage')">
+<ion-header>
+  <ion-navbar color="primary" text-uppercase>
+    <navbar></navbar>
+  <ion-title>CNH na Mão</ion-title>
+  </ion-navbar>
+</ion-header>
+<ion-content padding id="conteudo">
+  <h1>Bem Vindo {{detalheusuarios.nome}}</h1>
+  <div id="conteudoicon">
+    <span class="animated bounceInDown"></span>
+    <span class="animated bounceInLeft" (click)="goToPage('ListarsimuladosPage')">
           <img src="./assets/imgs/simulado.png">
           <p>Simulados</p>
         </span>
-        <span class="animated bounceInRight" (click)="goToPage('ProgressoPage')">
+    <span class="animated bounceInRight" (click)="goToPage('ProgressoPage')">
           <img src="./assets/imgs/resultado.png">
           <p>Progresso</p>
         </span>
-        <span class="animated bounceInUp">
+    <span class="animated bounceInUp">
           <img src="./assets/imgs/info.png">
           <p>Informações</p>
         </span>
-      </div>
-    </ion-content>
-   
+  </div>
+</ion-content>

@@ -1,3 +1,5 @@
+import { ComponentsModule } from './../components/components.module';
+import { NavbarComponent } from './../components/navbar/navbar';
 import {  HttpModule } from '@angular/http';
 import { BrowserModule } from '@angular/platform-browser';
 import { ErrorHandler, NgModule } from '@angular/core';
@@ -6,7 +8,6 @@ import { SplashScreen } from '@ionic-native/splash-screen';
 import { StatusBar } from '@ionic-native/status-bar';
 import { Push } from '@ionic-native/push';
 import { IonicStorageModule } from '@ionic/storage';
-
 
 /* Páginas */
 import { MyApp } from './app.component';
