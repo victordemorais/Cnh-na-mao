@@ -44,7 +44,9 @@ export class MyApp {
   }
   pushsetup() {
     const options: PushOptions = {
-      android: {
+
+      //estava dando erro no navegador por isso foi comentado
+     /* android: {
         senderID: '665303991144',
         sound: true,
         icon: "ic_push",
@@ -55,7 +57,7 @@ export class MyApp {
         alert: 'true',
         badge: true,
         sound: 'false'
-      },
+      },*/
       windows: {}
     };
 

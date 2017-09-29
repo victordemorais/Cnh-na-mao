@@ -11,7 +11,7 @@
         <ion-input name="username" placeholder="Nome" type="text" formControlName="nome"></ion-input>
       </ion-item>
       <ion-item *ngIf="!cadastro.controls.nome.valid  && (cadastro.controls.usuario.dirty || formEnviado)">
-        <p class="invalid-message">Nome Invalido!</p>
+        <p class="invalid-message">Nome Inválido!</p>
       </ion-item>
       <ion-item [class.invalid]="!cadastro.controls.usuario.valid  && (cadastro.controls.email.dirty || formEnviado)">
         <ion-label color="primary">
@@ -21,7 +21,7 @@
         <ion-input name="username" placeholder="Login" type="text" formControlName="usuario"></ion-input>
       </ion-item>
       <ion-item *ngIf="!cadastro.controls.usuario.valid  && (cadastro.controls.email.dirty || formEnviado)">
-        <p class="invalid-message">Nome de usuario Invalido!</p>
+        <p class="invalid-message">Nome de usuario Inválido!</p>
       </ion-item>
 
       <ion-item>
@@ -31,7 +31,7 @@
         <ion-input name="username" placeholder="Email" type="text" formControlName="email"></ion-input>
       </ion-item>
       <ion-item *ngIf="!cadastro.controls.email.valid  && (cadastro.controls.senha.dirty || formEnviado)">
-        <p class="invalid-message">Email Invalido!</p>
+        <p class="invalid-message">Email Inválido!</p>
       </ion-item>
 
       <ion-item>
@@ -51,7 +51,7 @@
         <ion-input type="text" name="cpf" placeholder="CPF" formControlName="cpf" ></ion-input>
       </ion-item>
       <ion-item *ngIf="!cadastro.controls.cpf.valid  && (cadastro.controls.genero.dirty || formEnviado)">
-        <p class="invalid-message">Cpf Invalido!</p>
+        <p class="invalid-message">Cpf Inválido!</p>
       </ion-item>
 
       <ion-item>
